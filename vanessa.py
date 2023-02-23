@@ -8,12 +8,14 @@
 False
 """
 def while_(n):
-    
-    
-    
-    
+    sum = 0
+    while n > 0:
+        sum += n
+        n -= 1
+    print(sum)
     return
 
+# while_(6)
 #create a function that checks how many times a number appears in an integer
 """
 checker(12234, 2)
@@ -24,12 +26,17 @@ checker(1234, 5)
 0
 """
 def checker(num , target):
-    
-    
-    
-    
+    target = str(target)
+    i = 0
+    num = str(num)
+    for _ in num:
+        if _ == target:
+            i += 1
+        else:
+            continue
+    print(i)
     return
-
+# checker(12234, 2)
 #crate a fucntion that removes all duplicate numbers
 """"
 >>dup(1223344)
@@ -40,11 +47,18 @@ def checker(num , target):
 6789
 """
 def dup(n):
-    
-    
-    
-    
+    m = str(n)
+    seen = set()
+    ans = ""
+    for _ in m:
+        if _ in seen:
+            continue
+        else:
+            ans += _
+            seen.add(_)
+    print(ans)
     return n
+dup(12223334)
 #create a palindrome checker for a string
 """
 >>palindrome("hello")
@@ -53,7 +67,11 @@ False
 true
 """
 def palindrome(s):
-    
-    
-    
-    return True
+    mp = len(s)//2
+    if s == s[::-1]:
+        print("Valid")
+    else:
+        print("Invalid")
+palindrome("hello")
+
+palindrome("aaabbbaaa")
