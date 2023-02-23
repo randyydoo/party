@@ -29,8 +29,8 @@ def checker(num , target):
     target = str(target)
     i = 0
     num = str(num)
-    for _ in num:
-        if _ == target:
+    for number in num:
+        if number == target:
             i += 1
         else:
             continue
@@ -50,12 +50,12 @@ def dup(n):
     m = str(n)
     seen = set()
     ans = ""
-    for _ in m:
-        if _ in seen:
+    for letter in m:
+        if letter in seen:
             continue
         else:
-            ans += _
-            seen.add(_)
+            ans += letter
+            seen.add(letter)
     print(ans)
     return n
 dup(12223334)
