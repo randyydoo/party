@@ -1,3 +1,3 @@
 # Welcome to the party
 
-![](pics/pop.jpeg)
+![](pics/pophd.jpeg)
