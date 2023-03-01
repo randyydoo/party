@@ -96,17 +96,24 @@ Sample List : [1,2,3,3,3,3,4,5]
 Unique List : [1, 2, 3, 4, 5]
 Click me to see the sample solution
 """
-def unique(list, newList):
-    if not list:
+def uniqueIterativly(list, newList):
+    i = 0
+    length = len(list) - 1
+    while i <= length:
+        if list[i] not in newList:
+            value = list[i]
+            newList.append(value)
+        i += 1
+    return newList
+
+def uniqueRecursively(list, newList, index):
+     length = len(list) - 1
+     if list[index] not in newList:
+        val = list[index]
+        newList.append(val)
+     elif index >= length:
         return newList
-    #fix first condition
-    elif list[-1] not in newList:
-        value = list[-1]
-        newList.append(value)
-    return unique(list.pop(), newList)
-## x = [1,2,3,3,3,4,4,5,5]
-## empty = []
-## print(unique(x, empty))
+     return uniqueRecursively(list,newList, index + 1)
 
 """
 9. Write a Python function that takes a number as a parameter 
@@ -123,7 +130,13 @@ Sample List : [1, 2, 3, 4, 5, 6, 7, 8, 9]
 Expected Result : [2, 4, 6, 8]
 Click me to see the sample solution
 """
-
+def even(list, index):
+    if list[index] % 2 != 0:
+        del list[index]
+        return even(list, index)
+    elif index >= len(list) - 1:
+        return list
+    return even(list, index + 1)
 
 """
 11. Write a Python function to check whether a number is "Perfect" or not. Go to the editor
